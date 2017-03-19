@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Sample Food Store</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../../css/food.css" th:href="@{/css/food.css}" />
+</head>
+
+<body>
+
+	<div class="nav">
+		<a href="../../../index.html" th:href="@{/}">&lt;&lt;</a>
+	</div>
+
+	<h1 class="incenter">Cuisine List</h1>
+
+	<table>
+		<thead>
+			<tr>
+				<th>NAME</th>
+				<th>PRICE($)</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="cui : ${cuis}">
+				<td><span th:text="${cui.name}">Onions</span> <a
+					href="cuisine_detail.html"
+					th:href="@{/cuisine_detail(cuiId=${cui.id})}"> view more</a></td>
+				<td th:text="${cui.price}">2.41</td>
+			</tr>
+		</tbody>
+	</table>
+
+	<div class="nav nav1">
+		<a href="../order.html" th:href="@{/order}">Place an order</a>
+	</div>
+
+</body>
+
+</html>
+

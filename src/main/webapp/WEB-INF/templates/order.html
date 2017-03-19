@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Good Thymes Virtual Grocery</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../../css/food.css" th:href="@{/css/food.css}" />
+</head>
+
+<body>
+
+	<div class="nav">
+		<a href="../menu.html" th:href="@{/menu}">&lt;&lt;</a>
+	</div>
+
+	<h1>Order</h1>
+
+	<p>
+		Create Date: <span th:text="${order.createDate}">2016-11-11</span>
+	</p>
+
+	<table>
+		<tr>
+			<th>CUISINE</th>
+			<th>AMOUNT</th>
+			<th>TOTAL($)</th>
+		</tr>
+		<tr th:each="ol : ${orderLines}">
+			<td th:text="${ol.cuisine.name}">apple</td>
+			<td th:text="${ol.amount}">6</td>
+			<td th:text="${ol.purchasePrice}">22.5</td>
+		</tr>
+	</table>
+
+</body>
+
+</html>
+

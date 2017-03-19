@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<title>Sample Food Store</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" media="all"
+	href="../../../css/food.css" th:href="@{/css/food.css}" />
+</head>
+
+<body>
+
+	<div class="nav">
+		<a href="../menu.html" th:href="@{/menu}">&lt;&lt;</a>
+	</div>
+
+	<h1>
+		Cuisine Detail of <span th:text="${cui.name}">Hot Garlic</span>
+	</h1>
+
+	<img th:if="${cui.name} == 'apple'" src="../../../images/apple.jpg"
+		th:src="@{/images/apple.jpg}" height="300" width="300" />
+	<img th:if="${cui.name} == 'banana'" src="../../../images/banana.jpg"
+		th:src="@{/images/banana.jpg}" height="300" width="300" />
+	<img th:if="${cui.name} == 'pear'" src="../../../images/pear.jpg"
+		th:src="@{/images/pear.jpg}" height="300" width="300" />
+	<img th:if="${cui.name} == 'java'" src="../../../images/java.jpg"
+		th:src="@{/images/java.jpg}" height="300" width="300" />
+
+	<p>
+		<b>Name: </b><span th:text="${cui.name}">apple</span>
+	</p>
+
+	<p th:if="${cui.name} == 'apple'">
+		<b>Introduction: </b>Delicious and crunchy, apple fruit is one of the
+		most popular and favorite fruits among the health conscious, fitness
+		lovers who firmly believe in the concept of "health is wealth."
+	</p>
+	<p th:if="${cui.name} == 'banana'">
+		<b>Introduction: </b>The banana is an edible fruit, botanically a
+		berry, produced by several kinds of large herbaceous flowering plants
+		in the genus Musa. In some countries, bananas used for cooking may be
+		called plantains, in contrast to dessert bananas.
+	</p>
+	<p th:if="${cui.name} == 'pear'">
+		<b>Introduction: </b>Sweet, delicious and rich flavored pears offer
+		crunchiness of apples yet juicy as peach and nectarine. They are
+		widely popular, particularly in the whole of the northern hemisphere,
+		for their unique nutrient qualities.
+	</p>
+	<p th:if="${cui.name} == 'java'">
+		<b>Introduction: </b>Java is a general-purpose computer programming
+		language that is concurrent, class-based, object-oriented, and
+		specifically designed to have as few implementation dependencies as
+		possible.
+	</p>
+
+	<p>
+		<b>Price($): </b><span th:text="${cui.price}">2.41</span>
+	</p>
+
+</body>
+
+</html>
+
