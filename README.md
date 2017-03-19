@@ -1,3 +1,5 @@
-ÏîÄ¿ÔËÐÐ£ºmvn jetty:run
+# åˆ†å¸ƒå¼è®¡ç®—è¯¾ç¨‹æœŸæœ«é¡¹ç›®-Sample Food Store
 
-·ÃÎÊÊ×Ò³£ºhttp://localhost:8080/
+> è¿è¡Œ mvn jetty:run
+
+> è®¿é—® http://localhost:8080/
